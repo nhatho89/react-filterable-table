@@ -44,7 +44,7 @@ class FilterableTable extends React.Component {
 			noRecordsMessage: "There are no records to display",
 			noFilteredRecordsMessage: "There are no records to display",
 			stickySorting: false,
-				onRecordFilter: () => {};
+			onRecordFilter: () => {},
 			tableClassName: "table table-condensed table-hover filterable-table",
 			pageSizes: [10, 20, 30, 50]
 		}
