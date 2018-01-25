@@ -256,7 +256,7 @@ class FilterableTable extends React.Component {
 			fields: this.props.fields
 		});
 
-		(filteredEntries) => { this.props.onRecordFilter }
+		this.props.onRecordFilter(filteredEntries);
 
 		let table = this.state.loading || this.state.entries.length === 0 ? '' :
 			<Table
