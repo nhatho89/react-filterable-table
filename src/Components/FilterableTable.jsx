@@ -44,6 +44,7 @@ class FilterableTable extends React.Component {
 			noRecordsMessage: "There are no records to display",
 			noFilteredRecordsMessage: "There are no records to display",
 			stickySorting: false,
+				onRecordFilter: () => {};
 			tableClassName: "table table-condensed table-hover filterable-table",
 			pageSizes: [10, 20, 30, 50]
 		}
@@ -255,6 +256,9 @@ class FilterableTable extends React.Component {
 			fields: this.props.fields
 		});
 
+		if (this.props.data == filteredEntries) {
+			(filteredEntries) => { this.props.onRecordFilter }
+		}
 
 		let table = this.state.loading || this.state.entries.length === 0 ? '' :
 			<Table
@@ -319,7 +323,7 @@ class FilterableTable extends React.Component {
 					pageSizes={this.props.pageSizes}
 				>
 				</Header>
-				
+
 
 				<div className="table-container">
 					{loading}
